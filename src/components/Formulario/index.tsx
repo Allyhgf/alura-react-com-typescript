@@ -28,7 +28,9 @@ export class Formulario extends React.Component {
             required
           />
         </div>
-        <Botao />
+        <Botao chave="3">
+          Adicionar
+        </Botao>
       </form>
     );
   }
