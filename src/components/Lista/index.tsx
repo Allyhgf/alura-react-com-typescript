@@ -1,5 +1,6 @@
 import { stringify } from "querystring";
 import React from "react";
+import './style.scss'
 
 export function Lista() {
   const tarefas = [
@@ -22,7 +23,7 @@ export function Lista() {
       <h2>Estudos do dia</h2>
       <ul>
         {tarefas.map((item, index) => (
-          <li key={index}>
+          <li key={index} className="item">
             <h3>{item.tarefa}</h3>
             <span>{item.tempo}</span>
           </li>
