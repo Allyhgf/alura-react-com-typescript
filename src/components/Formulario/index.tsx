@@ -1,8 +1,8 @@
 import React from "react";
-import { Botao } from "../Botao";
+import Botao from "../Botao";
 import style from "./Formulario.module.scss"
 
-export class Formulario extends React.Component {
+export default class Formulario extends React.Component {
   render() {
     return (
       <form action="" className={style.novaTarefa}>
@@ -28,7 +28,7 @@ export class Formulario extends React.Component {
             required
           />
         </div>
-        <Botao chave="3">
+        <Botao>
           Adicionar
         </Botao>
       </form>
