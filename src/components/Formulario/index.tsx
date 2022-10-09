@@ -1,6 +1,6 @@
 import React from "react";
 import { Botao } from "../Botao";
-import style from "./Form.module.scss"
+import style from "./Formulario.module.scss"
 
 export class Formulario extends React.Component {
   render() {
