@@ -3,14 +3,28 @@ import Botao from "../Botao";
 import style from "./Formulario.module.scss"
 
 export default class Formulario extends React.Component {
+  state = {
+    tarefa: "",
+    tempo: "00:00"
+  }
+
+  addTarefa(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    console.log("State: ", this.state)
+  }
+
   render() {
     return (
-      <form action="" className={style.novaTarefa}>
+      <form className={style.novaTarefa} onSubmit={this.addTarefa.bind(this)} >
         <div className={style.inputContainer}>
           <label htmlFor="tarefa">Acidione um novo estudo</label>
           <input
             type="text"
             name="tarefa"
+            value={this.state.tarefa}
+            onChange={event => {
+              this.setState({...this.state, tarefa: event.target.value})
+            }}
             id="tarefa"
             placeholder="O que você quer estudar?"
             required
@@ -22,6 +36,10 @@ export default class Formulario extends React.Component {
             type="time"
             step="1"
             name="tempo"
+            value={this.state.tempo}
+            onChange={event => {
+              this.setState({...this.state, tempo: event.target.value})
+            }}
             id="tempo"
             min="00:00:00"
             max="01:30:00"
