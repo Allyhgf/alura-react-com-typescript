@@ -1,13 +1,16 @@
 import React from "react";
 import style from "./Botao.module.scss";
 
-export default function Botao(props: {
+interface Props {
   type?: "button" | "submit" | "reset" | undefined;
+  onClick?: () => void;
   children: string;
-}) {
+}
+
+export default function Botao({ type, onClick, children }: Props) {
   return (
-    <button type={props.type} className={style.botao}>
-      {props.children}
+    <button onClick={onClick} type={type} className={style.botao}>
+      {children}
     </button>
   );
 }
